@@ -5,8 +5,9 @@ __pycache__/
 .venv/
 venv/
 
-# ---- 解析产物 ----
-out/
+# ---- 解析产物（保留目录结构，忽略其中文件）----
+out/*
+!out/.gitkeep
 
 # ---- Kaitai 生成代码（由 scripts/compile_ksy.py 从 spec/ 重新生成）----
 generated/
@@ -18,3 +19,7 @@ _gen_*.py
 # ---- 系统文件 ----
 .DS_Store
 Thumbs.db
+
+# ---- 测试数据（保留目录结构，忽略其中文件）----
+in/*
+!in/.gitkeep
