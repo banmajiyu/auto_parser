@@ -1,0 +1,87 @@
+{
+    "NAME": "auto_parser",
+    "VERSION": "1.0.0",
+    "PARSER":[
+        {
+            "NAME": "grid1x_hk_parser",
+            "TYPE": ".hk",
+            "MODULE": "grid1x.grid1x_hk_packet",
+            "CLASS": "Grid1xHkPacket",
+            "PACKET_LEN": 187,
+            "DESCRIPTION": "GRID-1X HK 遥测包 (187B, 帧头 0x1A2B3C4D)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "grid1x_ft_parser",
+            "TYPE": ".ft",
+            "MODULE": "grid1x.grid1x_ft_packet",
+            "CLASS": "Grid1xFtPacket",
+            "PACKET_LEN": 0,
+            "DESCRIPTION": "GRID-1X FT 命中包 (变长, 44 + pkg_event_num*20)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "grid1x_wf_parser",
+            "TYPE": ".wf",
+            "MODULE": "grid1x.grid1x_wf_packet",
+            "CLASS": "Grid1xWfPacket",
+            "PACKET_LEN": 568,
+            "DESCRIPTION": "GRID-1X WF 波形包 (568B, 帧头 0x2E2E33FF)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "grid1x_es_parser",
+            "TYPE": ".es",
+            "MODULE": "grid1x.grid1x_es_packet",
+            "CLASS": "Grid1xEsPacket",
+            "PACKET_LEN": 528,
+            "DESCRIPTION": "GRID-1X ES 能量谱包 (528B, 帧头 0x3F3F44CC)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "grid11b_telemetry_parser",
+            "TYPE": ".tlm",
+            "MODULE": "grid11b.grid11b_telemetry_packet",
+            "CLASS": "Grid11bTelemetryPacket",
+            "PACKET_LEN": 96,
+            "DESCRIPTION": "GRID-11B 遥测包 (96B, 帧头 HEAD/TAIL)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "iv_parser",
+            "TYPE": ".iv",
+            "MODULE": "misc.iv_packet",
+            "CLASS": "IvPacket",
+            "PACKET_LEN": 412,
+            "DESCRIPTION": "IV 数据包 (412B, 帧头 0x29416C8E)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "vbr_parser",
+            "TYPE": ".vbr",
+            "MODULE": "misc.vbr_packet",
+            "CLASS": "VbrPacket",
+            "PACKET_LEN": 412,
+            "DESCRIPTION": "VBR 数据包 (412B, 帧头 0x18305B7D)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "lvds_parser",
+            "TYPE": ".lvds",
+            "MODULE": "misc.lvds_packet",
+            "CLASS": "LvdsPacket",
+            "PACKET_LEN": 2048,
+            "DESCRIPTION": "LVDS 数据包 (2048B, 帧头 0xEB905716)",
+            "VERSION": "1.0.0"
+        },
+        {
+            "NAME": "app_parser",
+            "TYPE": ".app",
+            "MODULE": "misc.app_packet",
+            "CLASS": "AppPacket",
+            "PACKET_LEN": 0,
+            "DESCRIPTION": "APP 分帧包 (变长, 18 + data_len + 6, 帧头 GRID)",
+            "VERSION": "1.0.0"
+        }
+    ]
+}

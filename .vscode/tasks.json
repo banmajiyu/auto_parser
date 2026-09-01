@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "编译 Kaitai 解析器",
+            "type": "shell",
+            "command": "python",
+            "args": ["scripts/compile_ksy.py"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "将 xml/ 下所有 .ksy 编译为 Python 解析器到 parser/"
+        },
+        {
+            "label": "运行 auto_parser",
+            "type": "shell",
+            "command": "python",
+            "args": ["main.py"],
+            "group": "test",
+            "problemMatcher": [],
+            "detail": "运行主程序，解析 in/ 下的文件到 out/"
+        }
+    ]
+}

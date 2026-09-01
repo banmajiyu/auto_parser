@@ -1,0 +1,20 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- 解析产物 ----
+out/
+
+# ---- Kaitai 生成代码（由 scripts/compile_ksy.py 从 spec/ 重新生成）----
+generated/
+
+# ---- 临时脚本 ----
+_check_*.py
+_gen_*.py
+
+# ---- 系统文件 ----
+.DS_Store
+Thumbs.db
