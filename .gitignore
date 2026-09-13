@@ -33,4 +33,4 @@ in/*
 .pytest_cache/
 
 # ---- VSCode ----
-.vscode/
+.vscode/*
