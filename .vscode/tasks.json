@@ -11,7 +11,7 @@
                 "isDefault": true
             },
             "problemMatcher": [],
-            "detail": "将 xml/ 下所有 .ksy 编译为 Python 解析器到 parser/"
+            "detail": "将 ksy/ 下所有 .ksy（跳过 _drafts/）编译为 Python 解析器到 generated/"
         },
         {
             "label": "运行 auto_parser",
@@ -20,7 +20,19 @@
             "args": ["main.py"],
             "group": "test",
             "problemMatcher": [],
-            "detail": "运行主程序，解析 in/ 下的文件到 out/"
+            "detail": "运行主程序，解析 test/sample.hk（可用 -s/-d 改路径）到 out/"
+        },
+        {
+            "label": "运行测试 (pytest)",
+            "type": "shell",
+            "command": "python",
+            "args": ["-m", "pytest", "test", "-q"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "运行 test/ 下的解析器测试（需先在项目根编译 generated/）"
         }
     ]
 }

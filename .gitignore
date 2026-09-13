@@ -9,7 +9,7 @@ venv/
 out/*
 !out/.gitkeep
 
-# ---- Kaitai 生成代码（由 scripts/compile_ksy.py 从 spec/ 重新生成）----
+# ---- Kaitai 生成代码（由 scripts/compile_ksy.py 从 ksy/ 重新生成）----
 generated/
 
 # ---- 临时脚本 ----
@@ -20,6 +20,17 @@ _gen_*.py
 .DS_Store
 Thumbs.db
 
-# ---- 测试数据（保留目录结构，忽略其中文件）----
+# ---- 待解析输入（保留目录结构，忽略其中文件；本地样本不入库）----
 in/*
 !in/.gitkeep
+
+# ---- 测试（test/ 全量纳入提交：用例 + 真实样本 sample.hk）----
+# 逐类反选而不是 `!test/**`，避免把 test/__pycache__ 也一起收进仓库
+!test/
+!test/**/*.py
+!test/*.hk
+!test/*.md
+.pytest_cache/
+
+# ---- VSCode ----
+.vscode/
