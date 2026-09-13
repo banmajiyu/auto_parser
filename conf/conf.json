@@ -1,51 +1,6 @@
 {
     "NAME": "auto_parser",
-    "VERSION": "0.2",
-    "CRC_ALGO": [
-        {
-            "NAME": "crc16_ccitt",
-            "MODULE": "src.checks.crc16_ccitt",
-            "FUNC": "crc16_ccitt",
-            "SIZE": 2,
-            "INIT": "0x0000",
-            "BYTEORDER": "big",
-            "TAIL": 2,
-            "DROP_ON_FAIL": true,
-            "SUPPORT": [
-                {
-                    "TYPE": ".hk"
-                },
-                {
-                    "TYPE": ".ft",
-                    "TAIL": 6
-                },
-                {
-                    "TYPE": ".wf",
-                    "TAIL": 6
-                },
-                {
-                    "TYPE": ".es",
-                    "TAIL": 6
-                }
-            ],
-            "DESCRIPTION": "CRC-16/XMODEM (poly 0x1021, init 0x0000, MSB-first) — HK 文件、科学数据文件"
-        },
-        {
-            "NAME": "crc32",
-            "MODULE": "src.checks.crc32",
-            "FUNC": "crc32",
-            "SIZE": 4,
-            "INIT": "0xFFFFFFFF",
-            "BYTEORDER": "big",
-            "TAIL": 4,
-            "DROP_ON_FAIL": true,
-            "SUPPORT": [
-                ".iv",
-                ".vbr"
-            ],
-            "DESCRIPTION": "CRC-32C (poly 0x1EDC6F41, init/xorout 0xFFFFFFFF, 反射) — IV/VBR 数据；需先在 ksy 声明 crc 字段"
-        }
-    ],
+    "VERSION": "1.0.0",
     "PARSER":[
         {
             "NAME": "grid1x_hk_parser",
@@ -57,39 +12,12 @@
             "VERSION": "1.0.0"
         },
         {
-            "NAME": "grid1x_hk_178_parser",
-            "TYPE": ".hk",
-            "MODULE": "grid1x.grid1x_hk_packet_178",
-            "CLASS": "Grid1xHkPacket178",
-            "PACKET_LEN": 178,
-            "DESCRIPTION": "GRID-1X HK 遥测包 (178B, yingtian 版; test/sample.hk 即此格式)",
-            "VERSION": "1.0.0"
-        },
-        {
-            "NAME": "grid10b_hk_parser",
-            "TYPE": ".hk",
-            "MODULE": "grid10b.grid10b_hk_packet",
-            "CLASS": "Grid10bHkPacket",
-            "PACKET_LEN": 187,
-            "DESCRIPTION": "GRID-10B HK 遥测包 (187B, 《使用说明》V1.1 全套换算)",
-            "VERSION": "1.0.0"
-        },
-        {
             "NAME": "grid1x_ft_parser",
             "TYPE": ".ft",
             "MODULE": "grid1x.grid1x_ft_packet",
             "CLASS": "Grid1xFtPacket",
             "PACKET_LEN": 0,
             "DESCRIPTION": "GRID-1X FT 命中包 (变长, 44 + pkg_event_num*20)",
-            "VERSION": "1.0.0"
-        },
-        {
-            "NAME": "grid1x_ft_yingtian_parser",
-            "TYPE": ".ft",
-            "MODULE": "grid1x.grid1x_ft_packet_yingtian",
-            "CLASS": "Grid1xFtPacketYingtian",
-            "PACKET_LEN": 0,
-            "DESCRIPTION": "GRID-1X FT 命中包 yingtian 版 (变长, 46 + pkg_event_num*20)",
             "VERSION": "1.0.0"
         },
         {
@@ -117,15 +45,6 @@
             "CLASS": "Grid11bTelemetryPacket",
             "PACKET_LEN": 96,
             "DESCRIPTION": "GRID-11B 遥测包 (96B, 帧头 HEAD/TAIL)",
-            "VERSION": "1.0.0"
-        },
-        {
-            "NAME": "grid10b_tel_parser",
-            "TYPE": ".tel",
-            "MODULE": "grid10b.grid10b_tel_packet",
-            "CLASS": "Grid10bTelPacket",
-            "PACKET_LEN": 88,
-            "DESCRIPTION": "GRID-10B 遥测载荷 (88B, 无帧头/帧尾, 与 .tlm 的 11B 版同载荷)",
             "VERSION": "1.0.0"
         },
         {
@@ -164,9 +83,5 @@
             "DESCRIPTION": "APP 分帧包 (变长, 18 + data_len + 6, 帧头 GRID)",
             "VERSION": "1.0.0"
         }
-    ],
-    "OUTPUT_TYPE":[
-        "csv",
-        "json"
     ]
 }
