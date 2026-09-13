@@ -1,7 +1,0 @@
-{
-    "python.defaultInterpreterPath": "C:\\Users\\13988\\anaconda3\\python.exe",
-    "python.analysis.extraPaths": [
-        "${workspaceFolder}/generated",
-        "C:\\Users\\13988\\anaconda3\\Lib\\site-packages"
-    ]
-}
